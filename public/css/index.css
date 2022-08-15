@@ -1,0 +1,69 @@
+.Cards-Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+    .Cards-Container {
+        flex-direction: column;
+    }
+    .Popup-Cards-Container {
+        flex-direction: column !important;
+    }
+}
+
+.Popup-Cards-Container {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+    flex-wrap: wrap;
+}
+
+
+
+.Popup-Cards-Flight-Container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline-end: 150px;
+    margin-inline-start: 150px;
+    margin-top: 20px;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+}
+
+.Card-FlightInfo {
+    margin-right: 50px;
+}
+
+.Card-DestinationInfo {
+    margin-left: 50px;
+}
+
+.Popup-Cards-Order-Container {
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline-end: 150px;
+    margin-inline-start: 150px;
+    margin-top: 20px;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+}
+
+.Card-Order {
+    margin-right: 50px;
+}
+
+.Card-Shop {
+    margin-left: 50px;
+}

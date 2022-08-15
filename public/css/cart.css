@@ -1,0 +1,77 @@
+.Cart-Container-Title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Cart-Container {
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+    justify-content: space-between;
+    margin: 0px 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .Cart-Container {
+        margin: 0;
+    }
+}
+
+.Card-Column {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.Product-Card-Column {
+    border: #ffffff 3px solid;
+    background-color: #ffebeb !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-inline-end: 100px;
+    margin-inline-start: 100px;
+}
+
+.Product-Details {
+    display: flex;
+    flex-direction: column;
+    margin-inline-end: 100px;
+    margin-inline-start: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.Product-Amount {
+    display: flex;
+    flex-direction: row;
+}
+
+.Product-Image {
+    width: 100px;
+    height: 100px;
+    margin-inline-start: 100px;
+    border: #ffffff 3px solid;
+}
+
+.Product-Price {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.Left {
+    margin-inline-start: 100px;
+}
+
+.Right {
+    margin-inline-end: 100px;
+}

@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="/css/shop.css" />
+</head>
+<div class="Shop-Container">
+  <h1>Shop</h1>
+  <h3>${category}</h3>
+</div>
+
+<div class="Shop-Display-Cards">
+  ${products.map(product => `
+  <div class="Product-Card">
+    <img
+      class="card-img-top Product-Image"
+      src="/images/shop/${product.image}"
+      alt="${product.name}"
+    />
+    <div class="card-body Product-Card-Body">
+      <h5 class="card-title">${product.name}</h5>
+      <p class="card-text">${product.description}</p>
+      <form action="/shop/addProduct" method="POST">
+        <div class="form-group">
+          <input
+            type="number"
+            class="form-control"
+            id="amount"
+            name="amount"
+            value="1"
+          />
+          <input
+            hidden
+            type="text"
+            class="form-control"
+            id="productId"
+            name="productId"
+            value="${product.id}"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Add to cart</button>
+      </form>
+    </div>
+  </div>
+  `).join('')}
+</div>

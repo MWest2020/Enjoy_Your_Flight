@@ -1,0 +1,262 @@
+/* Main styles */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+
+/* Variables */
+
+:root {
+    --color-win: #78CF82;
+    --color-lose: #D94545;
+    --color-start: #5b85b7;
+    --color-neutral: #445069;
+    --color-neutral-light: #D2D2D2;
+    --color-keys: #37474F;
+    --color-keys-light: #E5E5E5;
+    --font-size-large: 60px;
+    --font-size-medium: 20px;
+    --transition: all .2s ease-in-out;
+}
+
+
+/* main */
+
+#phrase {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    justify-content: space-evenly;
+    flex-direction: column;
+    display: flex;
+    height: 100vh;
+    background-color: lightcoral;
+}
+
+li,
+ol,
+ul {
+    padding: 0;
+    display: inline-block;
+}
+
+h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: var(--font-size-large);
+    margin: 0;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+button {
+    margin: 6px;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    color: var(--color-keys);
+    font-size: var(--font-size-medium);
+    background-color: var(--color-keys-light);
+    border-radius: 5px;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+#btn__reset {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    max-height: 900px;
+    text-align: center;
+    background-image: url(https://image.flaticon.com/icons/png/512/27/27482.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.section {
+    width: 80%;
+    padding: 10px;
+}
+
+#phrase ul li {
+    margin-top: 15px;
+}
+
+
+/* Title */
+
+.header {
+    color: #3a3f58;
+}
+
+
+/* Phrase */
+
+.letter {
+    font-size: var(--font-size-medium);
+    height: 65px;
+    width: 65px;
+    padding: 20px 1px 0 1px;
+    margin-right: 2px;
+    color: transparent;
+    background: var(--color-neutral-light);
+    border-radius: 5px;
+}
+
+.space {
+    width: 25px;
+}
+
+.show {
+    color: #fff;
+    background-color: #4ac0d5;
+    font-size: 20px;
+    height: 65px;
+    width: 65px;
+    padding: 20px 1px 0 1px;
+    margin-right: 2px;
+    border-radius: 5px;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+}
+
+
+/* Keyboard */
+
+.keyrow {
+    display: flex;
+    justify-content: center;
+}
+
+.chosen {
+    background: #3a3f58;
+    border-radius: 5px;
+    font-size: var(--font-size-medium);
+    color: #FFFFFF;
+}
+
+.wrong {
+    background: #f7a964;
+    color: #FFFFFF;
+}
+
+.btn__reset {
+    padding: 16px;
+    margin: 50px auto;
+    background: #f7a964;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: solid 4px rgba(0, 0, 0, .3);
+    border-right: solid 3px rgba(0, 0, 0, .3)
+}
+
+.btn__reset:active {
+    padding: 14px 16px 16px 14px;
+    border-bottom: solid 4px rgba(0, 0, 0, 0);
+    border-right: solid 3px rgba(0, 0, 0, 0);
+}
+
+
+/* Overlay */
+
+#overlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    color: #FFFFFF;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+}
+
+.title {
+    color: #FFF;
+}
+
+.start {
+    background-color: #3a3f58;
+    background-image: url(https://i.pinimg.com/originals/8c/a9/01/8ca901c21c99ee879fa72e7e16827dc0.png);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: 5em;
+}
+
+.start a {
+    color: rgb(90, 29, 29);
+}
+
+.win {
+    background-color: var(--color-win);
+    background-image: url(https://static.thenounproject.com/png/1766500-200.png);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: 15em, 10em;
+}
+
+.win a {
+    color: var(--color-win);
+}
+
+.lose {
+    background-color: #f5785f;
+    background-image: url(https://www.flaticon.com/svg/static/icons/svg/3135/3135254.svg);
+}
+
+.lose a {
+    color: var(--color-lose);
+}
+
+a, a:active {
+    color: white;
+}
+
+
+@media only screen and (max-width:550px) {
+    body {
+        background-color: blue;
+        overflow: hidden;
+        height: 80%;
+        width: 100vw;
+    }
+    h2 {
+        font-size: medium;
+    }
+    .section {
+        margin: 0 auto;
+        padding: 2px;
+    }
+    .letter {
+        height: 40px;
+        width: 40px;
+    }
+    .show {
+        height: 40px;
+        width: 40px;
+    }
+    .keyrow {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

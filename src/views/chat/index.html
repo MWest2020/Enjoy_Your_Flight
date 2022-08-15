@@ -1,0 +1,98 @@
+<head>
+  <link rel="stylesheet" href="/css/chat.css" />
+
+  <style>
+    .Order-Container {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .card {
+      margin: auto;
+      width: 80%;
+      border-radius: 20px;
+      height: 100%;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<div class="Header-Container">
+  <h1>Welcome</h1>
+  <span>to Tulip air</span>
+</div>
+<main class="content">
+  <div class="card">
+    <div class="w-100">
+      <div class="position-relative">
+        <div class="chat-messages p-1" id="messages"></div>
+      </div>
+
+      <div class="flex-grow-0 py-3 px-4 border-top">
+        <form class="chat-form" id="form" action="">
+          <input id="input" /><button>Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  var form = document.getElementById("form");
+  var input = document.getElementById("input");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit("chat message", {
+        msg: input.value,
+        user: {
+          firstName: "${user.firstName}",
+          lastName: "${user.lastName}",
+          seatNumber: "${user.seatNumber}",
+        },
+        time: new Date(),
+      });
+      input.value = "";
+    }
+  });
+
+  function updateScroll() {
+    var element = document.getElementById("messages");
+    element.scrollTop = element.scrollHeight;
+  }
+
+  socket.on("chat message", function (obj) {
+    var mainDiv = document.createElement("div");
+    mainDiv.classList.add("chat-message-right", "mb-4");
+    var messageDiv = document.createElement("div");
+    messageDiv.classList.add(
+      "flex-shrink-1",
+      "bg-light",
+      "rounded",
+      "py-2",
+      "px-3",
+      "mr-3"
+    );
+    var messageText = document.createElement("p");
+    messageText.textContent = obj.msg;
+    messageText.classList.add("m-0");
+    var spanTime = document.createElement("span");
+    var timeDiv = document.createElement("div");
+    timeDiv.classList.add("text-muted", "small", "text-nowrap", "mt-2", "mr-1");
+    timeDiv.textContent = obj.time;
+    spanTime.appendChild(timeDiv);
+    var nameDiv = document.createElement("div");
+    nameDiv.classList.add("font-weight-bold", "mb-1");
+    nameDiv.textContent = obj.user;
+    nameDiv.appendChild(spanTime);
+    messageDiv.append(nameDiv, messageText);
+    mainDiv.appendChild(messageDiv);
+
+    messages.appendChild(mainDiv);
+    updateScroll();
+  });
+</script>

@@ -1,0 +1,16 @@
+<head>
+  <link rel="stylesheet" href="/css/movies.css" />
+</head>
+
+<div class="Header-Container">
+  <h1>Music selection</h1>
+  <span>from Tulip Air</span>
+
+  <div class="Movies-Container">
+    ${mp3.map((name) => `
+    <div class="Movies-Cards-Container">
+      <a href="music/${name}"><img class="Movies-link" src="/images/music-note.png" /><span>    </span>${name} </a>
+    </div>
+    ` ).join(``)}
+  </div>
+</div>

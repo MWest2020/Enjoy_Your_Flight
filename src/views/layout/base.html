@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EYF</title>
+
+    <link rel="stylesheet" href="/css/general.css" />
+
+    <!-- Font Awesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/d6b5de3f23.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        background: url("/images/background.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="btn btn-link">
+        <a class="Menu-cart" href="/"
+          ><i class="fa fa-fw fa-home fa-2xl bg-black"></i
+        ></a>
+      </button>
+      <button class="btn btn-link">
+        <a class="Menu-cart" href="/profile"
+          ><i class="fa-solid fa-user fa-2xl"></i
+        ></a>
+      </button>
+      <div class="col-2">
+        <a class="Menu-cart" href="/cart"
+          ><i class="fa-solid fa-cart-shopping fa-2xl"></i
+        ></a>
+      </div>
+    </nav>
+
+    <main>${partial}</main>
+
+    <footer class="text-lg-start text-muted footer">
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2022 Copyright:
+        <a
+          class="text-reset fw-bold"
+          href="https://gitlab.fdmci.hva.nl/eyf/2122/team07"
+          >EYF-team07</a
+        >
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function card(type) {
+        let item = document.getElementById(type);
+        showHideItem(item);
+      }
+
+      function showHideItem(item) {
+        if (item.style.display === "none") {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

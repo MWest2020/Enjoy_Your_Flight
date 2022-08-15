@@ -1,0 +1,118 @@
+<head>
+  <link rel="stylesheet" href="/css/cart.css" />
+  <style>
+    .amountButton {
+      background: transparent;
+      border: none;
+    }
+  </style>
+</head>
+
+<div class="Cart-Container-Title">
+  <h1>Shopping Cart</h1>
+</div>
+
+<div class="Cart-Container">
+  <div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+      <div class="Card-Column col-md-8">
+        <button type="sumbit" class="btn btn-outline-primary">
+          <a href="/shop">Back to shop </a>
+        </button>
+        <form action="/cart/deleteProducts" method="POST">
+          <button type="submit" class="btn btn-outline-danger">
+            Empty Cart
+          </button>
+        </form>
+      </div>
+      <div class="col-md-8">
+        ${user.cart.map((product, idx) => { return (`
+        <div
+          class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded"
+        >
+          <div class="mr-1">
+            <img
+              class="rounded"
+              src="/images/shop/${product.image}"
+              width="70"
+            />
+          </div>
+          <div class="d-flex flex-column align-items-center product-details">
+            <span class="font-weight-bold">${product.name}</span>
+          </div>
+          <div class="d-flex flex-row align-items-center qty">
+            <form action="/cart/reduceAmount" method="POST">
+              <button type="submit" class="amountButton">
+                <i class="fa fa-minus text-danger"></i>
+              </button>
+              <input
+                hidden
+                type="text"
+                class="form-control"
+                id="productId"
+                name="productId"
+                value="${product.id}"
+              />
+            </form>
+            <h5 class="text-grey mt-1 mr-1 ml-1">${product.totalAmount}</h5>
+            <form action="/cart/addAmount" method="POST">
+              <button type="submit" class="amountButton">
+                <i class="fa fa-plus text-success"></i>
+              </button>
+              <input
+                hidden
+                type="text"
+                class="form-control"
+                id="productId"
+                name="productId"
+                value="${product.id}"
+              />
+            </form>
+          </div>
+          <div>
+            <h5 class="text-grey">€${product.price}</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <form action="/cart/deleteProduct" method="POST">
+              <div>
+                <input
+                  hidden
+                  type="number"
+                  class="form-control"
+                  id="productId"
+                  name="productId"
+                  value="${product.id}"
+                />
+              </div>
+              <button type="submit" class="amountButton">
+                <i class="fa fa-trash mb-1 text-danger"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        `)}).join('')}
+        <div
+          class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded justify-content-between"
+        >
+          <h4>Total:</h4>
+          <h4>&#x20AC;${user.totalPrice}</h4>
+        </div>
+        <div
+          class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"
+        >
+          <form action="/cart/addOrder" method="POST" class="w-100">
+            <button type="submit" class="btn btn-outline-success w-100">
+              Make Purchase
+            </button>
+          </form>
+          <!-- <button
+          class="btn btn-warning btn-block btn-lg ml-2 pay-button"
+          type="button"
+        >
+          Proceed to Pay
+        </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

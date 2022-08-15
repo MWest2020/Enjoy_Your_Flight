@@ -1,0 +1,53 @@
+<head>
+  <title>Snake Game</title>
+  <style>
+    body {
+      background-image: url("/images/games/snake/img.png");
+    }
+  </style>
+  <link rel="stylesheet" href="/css/snakeIndex.css"/>
+</head>
+<body>
+<div class="snake">Snake game</div>
+
+<div class="game-options">
+  <ul class="list-group">
+    <a href="/entertainment/games">
+      <li class="list-group-item">Back to games</li>
+    </a>
+    <a href="/entertainment/games/snake/start">
+      <li class="list-group-item">Start Game</li>
+    </a>
+    <a data-toggle="modal" data-target="#optionsModal">
+      <li class="list-group-item">Options</li>
+    </a>
+  </ul>
+</div>
+
+<div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Options</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/entertainment/games/snake/options" method="POST">
+        <div class="modal-body">
+          <div class="container">
+            <h5>Set the speed of the snake</h5>
+            <label for="customRange2">Choose easy, normal or high speed</label>
+            <input name="speed" type="range" class="custom-range" value="${game.range}" min="0" max="2" id="customRange2">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-outline-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>

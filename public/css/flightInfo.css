@@ -1,0 +1,73 @@
+.FlightInfo-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.FlightInfo-Cards-Container {
+    display: flex;
+    width: 80%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+    margin-inline-end: 20px;
+    margin-inline-start: 20px;
+}
+
+.Card-Column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.flightinfoCards {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.Card-Row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.flightbody {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 768px) {
+    .FlightInfo-Cards-Container {
+        flex-direction: column;
+    }
+    .flightinfoCards {
+        margin-right: 10px;
+    }
+    .flight-card {
+        margin-top: 10px;
+    }
+}
+.flight-card {
+    border: #ffffff 3px solid;
+    max-height: 30%;
+    overflow: scroll;
+}
+.FlightInfo-Link {
+    background-color: white;
+}
+
+.FlightInfo-Image {
+    border-color: transparent;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

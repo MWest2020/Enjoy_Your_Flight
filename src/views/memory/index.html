@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/memory_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Dark Souls Memory</title>
+</head>
+<body>
+<h1 class="welcome">Los deze memory op!<br><button type="button" onclick="refreshPage()">Reset Memory</button>
+</h1>
+<div class="gameStatsContainer">
+    <div id="gameTimer" class="gameStats">Time spent</div>
+    <div id="cardPairs" class="gameStats">Pairs</div>
+    <div id="turns" class="gameStats">Turns</div>
+</div>
+
+<div class="loginPopup">
+    <div class="formPopup" id="popupForm">
+        <form action="/entertainment/games/submithighscore" method="POST" class="formContainer">
+            <h2>Please provide your name</h2>
+            <label for="name">
+                <strong>Name</strong>
+            </label>
+            <label for="name">
+                <input type="text" id="name" placeholder="Your name" name="name" required>
+            </label>
+            <label for="time">
+                <strong>Time</strong>
+            </label>
+            <label for="time">
+                <input type="number" id="time" value="" name="time" readonly>
+            </label>
+            <label for="turnsTaken">
+                <strong>Turns</strong>
+            </label>
+            <label for="turnsTaken">
+                <input type="number" id="turnsTaken" value="" name="turnsTaken" readonly>
+            </label>
+            <label for="date">
+                <strong>Date</strong>
+            </label>
+            <label for="date">
+                <input type="date" id="date" value="" name="date" readonly>
+            </label>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn cancel" onclick="refreshPage()">Start new</button>
+        </form>
+    </div>
+</div>
+
+<div class="main">
+    <section class="memory">
+            <div class="card tooltip" data-image="Andre">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Andre.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Andre">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Andre.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Artorias">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Artorias.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Artorias">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Artorias.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Gwyn">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Gwyn.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Gwyn">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Gwyn.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Siegward">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Siegward.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Siegward">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Siegward.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Gael">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Gael.jpg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Gael">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Gael.jpg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Firelink Shrine">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Firelink%20Shrine.jpg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Firelink Shrine">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Firelink%20Shrine.jpg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Humanity">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Humanity.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Humanity">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Humanity.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Solaire">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Solaire.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Solaire">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Solaire.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Yorshka">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Yorshka.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Yorshka">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Yorshka.jpeg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Patches">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Patches.jpg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+            <div class="card tooltip" data-image="Patches">
+                <span class="tooltiptext">Klik<br>hier</span>
+                <img class="front" src="/images/games/memory/Patches.jpg" alt="MEMORY CARD">
+                <img class="back" src="/images/games/memory/Backside-card.jpg" alt="MEMORY CARD">
+            </div>
+
+
+    </section>
+</div>
+
+<div class="hall_of_fame">
+    Klik <a href="/entertainment/games/hall_of_fame">hier</a> om naar de Hall of Fame te navigeren.
+</div>
+<div class="hall_of_fame">
+    Klik <a href="/entertainment/games">hier</a> om terug naar het game overzicht te navigeren.
+</div>
+<button type="button" class="collapsible">Lees hier interessante informatie over deze puzzel:</button>
+<div class="help">
+    <ul>
+        <li>De <a href="https://nl.wikipedia.org/wiki/Memory">spelregels</a></li>
+        <li>Memory op <a href="https://nl.wikipedia.org/wiki/Memory">Wikipedia</a></li>
+        <li>De <a href="http://www.driwa.org/cafekidz/memoryinfo">Deutsche Memory Meisterschaft</a></li>
+    </ul>
+</div>
+<script src="/js/memory/interactive.js"></script>
+</body>
+</html>
+

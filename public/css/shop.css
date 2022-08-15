@@ -1,0 +1,111 @@
+.Shop-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 430px) {
+    .order-table {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto
+    }
+    .Shop-Display-Cards {
+        margin: 0 !important;
+    }
+}
+
+.Shop-Cards-Container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+    margin-inline-end: 100px;
+    margin-inline-start: 100px;
+}
+
+.Container {
+    margin-top: 20px;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+    margin-inline-end: 100px;
+    margin-inline-start: 100px;
+}
+
+.parent {
+   display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.child {
+    height: 100px;
+    width: 250px;
+    background-color: #ffebeb !important;
+    border: #ffffff 3px solid;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.Shop-Display-Cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 20px;
+    border: #ffffff 3px solid;
+    backdrop-filter: blur(80px);
+    margin: 0px 100px;
+}
+.Product-Card {
+    background-color: #ffebeb !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #ffffff 3px solid;
+    margin: 50px;
+    flex: 1;
+    padding-top: 1.25rem;
+}
+.Product-Image {
+    max-width: 250px;
+}
+.Product-Card-Body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.Card-Column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-inline-end: 100px;
+    margin-inline-start: 100px;
+}
+
+.Shop-Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100px;
+}
+
+.order-container {
+    width: 100%;
+}

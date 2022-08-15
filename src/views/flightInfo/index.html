@@ -1,0 +1,30 @@
+<head>
+  <link rel="stylesheet" href="/css/flightInfo.css" />
+</head>
+
+<div class="container-fluid d-flex justify-content-center">
+  <h1>Flight Info</h1>
+</div>
+<div class="flightbody">
+  <div class="FlightInfo-Cards-Container">
+    <div class="flightinfoCards">
+      <div class="container-fluid flight-card">
+        The airport we flew from: ${originName}<br />
+        Country: ${originCountry}
+      </div>
+      <div class="container-fluid flight-card">
+        The airport we will be landing on: ${destinationName}<br />
+        Country: ${destinationCountry}
+      </div>
+      <div class="container-fluid flight-card">
+        The current speed is: ${speedPlane} km/h<br />
+        The current altitude is: ${altitudePlane} meters
+      </div>
+    </div>
+    <div class="Card-Row">
+      <div class="FlightInfo-Image">
+        <img class="container-fluid" src="/images/bbox.png" />
+      </div>
+    </div>
+  </div>
+</div>

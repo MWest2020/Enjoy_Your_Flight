@@ -1,0 +1,63 @@
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.snake {
+    color: #cc8899;
+    text-align: center;
+    font-size: 140px;
+}
+
+.game-options {
+    margin: 50px;
+}
+
+ul {
+    margin: 20px;
+}
+
+li {
+    border: 10px solid #cc8899 !important;
+    text-align: center;
+    text-decoration: none;
+}
+
+li:hover {
+    background: palevioletred;
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+.snake-speed {
+    text-align: center;
+}
+
+.snake-speed > .speed {
+    background: #cc8899;
+}
+
+.snake-speed > .active {
+    background: palevioletred !important;
+    border: 5px solid black !important;
+}

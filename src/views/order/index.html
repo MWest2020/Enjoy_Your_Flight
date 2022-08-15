@@ -1,0 +1,53 @@
+<head>
+  <link rel="stylesheet" href="/css/shop.css" />
+
+  <style>
+    .card {
+      margin: auto;
+      width: 75%;
+      border-radius: 20px;
+      height: 100%;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<div class="Shop-Container">
+  <h1>Orders</h1>
+</div>
+<div class="card">
+  <div class="order-container">
+    <table class="table table-striped order-table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Seat number</th>
+          <th scope="col">Time</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${orders.map(order => `
+        <tr
+          onclick="orderDetails('${order.orderNumber}')"
+          style="cursor: pointer"
+        >
+          <th scope="row">${order.orderNumber}</th>
+          <td>${order.user_seatNumber}</td>
+          <td>${order.time}</td>
+          <td>
+            ${order.status === "open" ? `<span class="badge badge-primary"
+              >${order.status}</span
+            >` : `<span class="badge badge-success">${order.status}</span>`}
+          </td>
+        </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  function orderDetails(orderId) {
+    window.location.href = "/order/orderDetails?orderId=" + orderId;
+  }
+</script>

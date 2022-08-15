@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/breakout/game.css" />
+    <link rel="stylesheet" href="/css/breakout/menu.css" />
+    <!-- Font Awesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/d6b5de3f23.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title>Breakout</title>
+    <style>
+      body {
+        background-color: #0c0f15;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="pt-table desktop-768">
+        <div
+          class="pt-tablecell page-home relative setBackground"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+            background-position: center;
+            background-size: cover;
+          "
+        >
+          <div class="overlay setBackground"></div>
+          <div class="d-none">
+            <p id="ballSpeed">${gameProfile.ballSpeed}</p>
+            <p id="lives">${gameProfile.lives}</p>
+            <p id="brickRowCount">${gameProfile.brickRowCount}</p>
+          </div>
+          <div class="container">
+            <canvas id="myCanvas" height="420" width="480"></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/breakout/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<head>
+  <link rel="stylesheet" href="/css/profile.css" />
+
+  <style>
+    .card {
+      margin: auto;
+      width: 50%;
+      border-radius: 20px;
+      height: 100%;
+      padding: 25px;
+    }
+
+    .mt-50 {
+      margin-top: 50px;
+    }
+
+    .mb-50 {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 767px) {
+      .card {
+        width: 80%;
+      }
+    }
+
+    @media (height: 1366px) {
+      .card {
+        width: 75%;
+      }
+    }
+
+    #orderno {
+      font-size: smaller;
+    }
+
+    .main {
+      width: 100%;
+    }
+
+    .row {
+      margin: 0 !important;
+    }
+
+    .Order-Container {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .btn-outline-primary {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      color: black;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #e7c4c4;
+      border: 1px solid rgba(0, 0, 0);
+    }
+  </style>
+</head>
+
+<div class="Profile-Container">
+  <h1>Profile</h1>
+</div>
+${err ? `
+<div class="alert alert-danger m-4" role="alert">
+  <b>Something went wrong</b>
+  <div class="d-flex">${err}</div>
+</div>
+`: ``}
+<div class="card mt-50 mb-50">
+  <div class="Order-Container">
+    <form action="/profile/submitprofile" method="POST">
+      <div class="form-group">
+        <label for="seatNumber">Seat number</label>
+        <input
+          required
+          type="number"
+          class="form-control"
+          id="seatNumber"
+          name="seatNumber"
+          placeholder="Enter seat number"
+        />
+      </div>
+      <div class="form-group">
+        <label for="firstName">Firstname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          placeholder="Firstname"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Lastname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          placeholder="Lastname"
+          onchange="lastNameValue(this.value)"
+        />
+      </div>
+      <div class="form-group" id="password" hidden>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Password"
+        />
+      </div>
+      <div class="Employee-checkbox">
+        <div class="form-group">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="employee"
+            name="employee"
+          />
+          <label class="form-check-label">Tulip air employee</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+<script>
+  const checkbox = document.getElementById("employee");
+
+  checkbox.addEventListener("change", (event) => {
+    if (event.currentTarget.checked) {
+      document.getElementById("password").removeAttribute("hidden", "");
+      document.getElementById("password").setAttribute("visible", "");
+    } else {
+      document.getElementById("password").removeAttribute("visible", "");
+      document.getElementById("password").setAttribute("hidden", "");
+    }
+  });
+</script>

@@ -1,0 +1,36 @@
+<head>
+  <title>EYF - Tic Tac Toe</title>
+  <link rel="stylesheet" href="/css/TicTacToe.css" />
+</head>
+
+<div class="Header-Container">
+  <h1>Tic Tac Toe Game</h1>
+  <div class="center" id="main">
+    <h4>--Play and Enjoy--</h4>
+    <button onclick="start()" class="button">Start a New Game</button>
+    <br />
+    <button onclick="learn()" class="button">Learn How to Play</button>
+    <br />
+    <!--        <button onclick="exit()" class="button">Exit game</button>-->
+  </div>
+  <div class="center" id="learn">
+    <p>
+      You are X, your friend is O.
+      <br />
+      The first player to get 3 of the X or O marks in a row (up, down, across,
+      or diagonally) is the winner. When all 9 squares are full, the game is
+      over. If no player has 3 marks in a row, the game ends in a tie.
+    </p>
+    <img src="/images/games/learn.jpg" alt="Learn" />
+    <br />
+    <button onclick="main()" class="button">Back</button>
+  </div>
+  <div class="center" id="game">
+    <div class="center" style="margin: 5px">
+      <h2 id="textPlayer" style="font-size: 0.9rem">Current Player 1</h2>
+      <h2 id="textComd" style="font-size: 0.9rem">It's the turn of player 2</h2>
+    </div>
+    <canvas id="tic-tac-toe-board" class="center"></canvas>
+  </div>
+</div>
+<script src="/js/TicTacToe.js"></script>

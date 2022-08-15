@@ -1,0 +1,45 @@
+<head>
+  <link rel="stylesheet" href="/css/shop.css" />
+
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .inner {
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+
+    .inner:nth-of-type(1) {
+      background: red;
+    }
+
+    .inner:nth-of-type(2) {
+      background: gold;
+    }
+
+    .inner:nth-of-type(3) {
+      background: green;
+    }
+
+    .inner:nth-of-type(4) {
+      background: blue;
+    }
+  </style>
+</head>
+
+<div class="Shop-Container">
+  <h1>Shop</h1>
+</div>
+
+<div class="Container">
+  <div class="parent">
+    ${categories.map((category, idx) => { return (`
+    <a href="/shop/products/${category.name}" key="${idx}" class="child">
+      <span class="card-text">${category.name}</span>
+    </a>
+    `)}).join('')}
+  </div>
+</div>

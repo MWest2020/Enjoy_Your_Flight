@@ -1,0 +1,17 @@
+<head>
+  <link rel="stylesheet" href="/css/movies.css" />
+</head>
+
+<div class="Header-Container">
+  <h1 >Movie selection</h1>
+  <span >from Tulip Air</span>
+
+  <div class="Movies-Container">
+    ${mp4.map((name) => `
+    <div class="Movies-Cards-Container">
+      <a href="movies/${name}"><img class="Movies-link" src="images/play-button.png" width="30px" height="30px"/><span>   </span>${name}</a
+      >
+    </div>
+    ` ).join(``)}
+  </div>
+</div>

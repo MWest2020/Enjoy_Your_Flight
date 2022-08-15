@@ -1,0 +1,93 @@
+<head>
+  <link rel="stylesheet" href="/css/order.css" />
+
+  <style>
+    .card {
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<div class="Order-Title-Container">
+  <h1>Order details</h1>
+</div>
+<div class="OrderDetails-Container">
+  ${err ? `
+  <div class="alert alert-danger m-4" role="alert">
+    <b>Something went wrong</b>
+    <div class="d-flex">${err}</div>
+  </div>
+  `: ``}
+
+  <div class="card mt-50 mb-50">
+    <div class="Order-Container">
+      <b>Payment summary</b>
+      <div class="d-flex">
+        <span class="text-muted" id="orderno"
+          ><b>Order</b> #${order[0].orderNumber}</span
+        >
+      </div>
+      <div class="d-flex">
+        <span class="text-muted" id="orderno"
+          ><b>seat number</b> ${order[0].user_seatNumber}</span
+        >
+      </div>
+      <div class="d-flex">
+        <span class="text-muted" id="orderno"
+          ><b>status</b> ${order[0].status}</span
+        >
+      </div>
+    </div>
+    <div class="main">
+      <div class="row row-main">
+        <div class="col-6">
+          <span id="sub-title">
+            <p><b>product</b></p>
+          </span>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+          <p><b>Amount</b></p>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+          <p><b>Sub total</b></p>
+        </div>
+      </div>
+
+      ${orderDetails.map(orderLine => `
+      <div class="row row-main">
+        <div class="col-6">
+          <div class="row d-flex">
+            <p>${orderLine.name}</p>
+          </div>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+          <p>${orderLine.amount}x</p>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+          <p>€${orderLine.subtotal}</p>
+        </div>
+      </div>
+      `).join('')}
+
+      <hr />
+      <div class="total">
+        <div class="row">
+          <div class="col"><b> Total:</b></div>
+          <div class="col d-flex justify-content-end">
+            <b>€${total}</b>
+          </div>
+        </div>
+        <form
+          action="/order/finishOrder?orderId=${order[0].orderNumber}&status=done"
+          method="post"
+        >
+          <div class="d-flex justify-content-end w-100 mt-2">
+            <button type="submit" class="btn btn-outline-secondary">
+              Order delivered
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
